@@ -1,29 +1,38 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Button } from "react-native";
-import React, { useState } from "react";
+import { StyleSheet, Text, View, Button, ScrollView } from "react-native";
+import React, { useState, useEffect } from "react";
+import {
+  createStaticNavigation,
+  NavigationContainer,
+} from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { Dimensions } from "react-native";
+import * as Location from "expo-location";
 
-export default function App() {
-  const [number, setNumber] = useState(0);
-
+const SCREEN_WIDTH = Dimensions.get("window").width;
+const HomeScreen = () => {
   return (
-    <View style={styles.container}>
-      <View style={styles.cityContainer}>
-        <Text style={styles.city}>Incheon</Text>
-      </View>
-
-      <View style={styles.weatherContainer}>
-        <View style={styles.day}>
-          <Text style={styles.regDate}>12월 5일, 목, 15:49</Text>
-          <Text style={styles.weather}>맑음</Text>
-        </View>
-
-        <View style={styles.tempContainer}>
-          <Text style={styles.temp}>15</Text>
-        </View>
-      </View>
-
-      <StatusBar style="auto" />
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <Text style={{ fontSize: 40, fontWeight: "bold" }}>메인 화면</Text>
     </View>
+  );
+};
+const DetailScreen = () => {
+  return (
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <Text style={{ fontSize: 40, fontWeight: "bold" }}>세부 화면</Text>
+    </View>
+  );
+};
+const Stack = createNativeStackNavigator();
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Details" component={DetailScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
@@ -33,58 +42,5 @@ const styles = StyleSheet.create({
     backgroundColor: "#ffe01a",
     // alignItems: "center",
     // justifyContent: "center",
-  },
-  cityContainer: {
-    flex: 1,
-  },
-  city: {
-    flex: 1,
-    marginTop: 50,
-    paddingTop: 20,
-    fontSize: 40,
-    textAlign: "center",
-    fontWeight: "bold",
-    // backgroundColor: "red",
-  },
-  weatherContainer: {
-    flex: 3,
-    // backgroundColor: "green",
-  },
-  day: {
-    flex: 0.2,
-    // backgroundColor: "red",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  regDate: {
-    paddingTop: 10,
-    paddingLeft: 20,
-    paddingRight: 20,
-    fontWeight: "bold",
-    borderRadius: 20,
-    overflow: "hidden",
-    flex: 1,
-    color: "white",
-    backgroundColor: "black",
-  },
-  weather: {
-    flex: 1.5,
-    marginTop: 20,
-    fontSize: 25,
-    fontWeight: "bold",
-    // backgroundColor: "purple",
-  },
-  tempContainer: {
-    flex: 0.3,
-    alignItems: "center",
-    // backgroundColor: "blue",
-    justifyContent: "center",
-  },
-  temp: {
-    flex: 0.5,
-    fontSize: 90,
-    textAlign: "center",
-    fontWeight: "bold",
-    // backgroundColor: "orange",
   },
 });
