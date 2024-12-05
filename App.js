@@ -7,15 +7,17 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text style={{ fontSize: 50 }}>결과: {number}</Text>
-      <View style={{ flexDirection: "row", gap: 10 }}>
+      <Text style={styles.text}>결과 : {number}</Text>
+      <View style={styles.btn_Group}>
         <Button
+          style={styles.btn}
           title="증가"
           onPress={() => {
             setNumber(number + 1);
           }}
         />
         <Button
+          style={styles.btn}
           title="감소"
           onPress={() => {
             setNumber(number - 1);
@@ -33,5 +35,13 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+  },
+  text: {
+    fontSize: 50,
+    fontWeight: "bold",
+  },
+  btn_Group: {
+    flexDirection: "row",
+    gap: 10,
   },
 });
