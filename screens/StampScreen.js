@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     width: "40%", // 버튼 크기 확장
     alignItems: "center",
     justifyContent: "center",
-    alignSelf: "center", // 버튼을 가운데 정렬
+    alignSelf: "center", // 버튼을 가운데 정렬!
   },
   buttonText: {
     textAlign: "center",
