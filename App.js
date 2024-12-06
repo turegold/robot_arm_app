@@ -9,15 +9,19 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Dimensions } from "react-native";
 
 import tabConfig from "./configs/tabConfig";
+import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import TodoSearchScreen from "./screens/OrderStack";
 
 const SCREEN_WIDTH = Dimensions.get("window").width;
 
-const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
+// const Tab = createMaterialTopTabNavigator();
 export default function App() {
   //네비게이터의 screenOptions를 변수로 따로 담음
   const screenOptions = ({ route }) => ({
+    tabBarInActiveTintColor: "black",
+    animationEnable: true,
     tabBarIcon: ({ color, size }) => {
       //반복문을 돌면서 route의 정보와 페이지의 정보가 같다면 해당 페이지 객체를 반환
       const routeConfig = tabConfig.find(
@@ -34,9 +38,7 @@ export default function App() {
       paddingBottom: 10,
       fontWeight: "bold",
     },
-    tabBarInActiveTintColor: "black",
   });
-
   return (
     <NavigationContainer>
       <Tab.Navigator screenOptions={screenOptions}>
@@ -45,7 +47,10 @@ export default function App() {
             key={routeConfig.name}
             name={routeConfig.name}
             component={routeConfig.component}
-            options={{ title: routeConfig.title }}
+            options={{
+              title: routeConfig.title,
+              headerShown: routeConfig.headerShown,
+            }}
           />
         ))}
       </Tab.Navigator>

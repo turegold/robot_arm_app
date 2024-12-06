@@ -1,11 +1,14 @@
 import AntDesign from "@expo/vector-icons/AntDesign";
+import Feather from "@expo/vector-icons/Feather";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
+import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 
 import HomeScreen from "../screens/HomeScreen";
-import TodoWriteScreen from "../screens/TodoWriteScreen";
-import TodoSearchScreen from "../screens/TOdoSearchScreen";
-import TodoListScreen from "../screens/TodoListScreen";
+import StampScreen from "../screens/StampScreen";
+import OrderStack from "../screens/OrderStack";
+import EventScreen from "../screens/EventScreen";
 import MyPageScreen from "../screens/MyPageScreen";
 
 //각 페이지의 정보들
@@ -16,27 +19,31 @@ export default tabConfig = [
     component: HomeScreen,
     focusedIcon: "home",
     iconComponent: AntDesign,
+    headerShown: true,
   },
   {
-    name: "TodoWrite",
-    title: "할일 작성",
-    component: TodoWriteScreen,
-    focusedIcon: "edit",
-    iconComponent: AntDesign,
+    name: "Stamp",
+    title: "스탬프",
+    component: StampScreen,
+    focusedIcon: "stamp",
+    iconComponent: FontAwesome6,
+    headerShown: true,
   },
   {
-    name: "TodoSearch",
-    title: "할일 검색",
-    component: TodoSearchScreen,
-    focusedIcon: "search1",
-    iconComponent: AntDesign,
+    name: "Order",
+    title: "주문",
+    component: OrderStack,
+    focusedIcon: "coffee",
+    iconComponent: Feather,
+    headerShown: false,
   },
   {
-    name: "TodoList",
-    title: "할일 리스트",
-    component: TodoListScreen,
-    focusedIcon: "th-list",
-    iconComponent: FontAwesome,
+    name: "Event",
+    title: "이벤트",
+    component: EventScreen,
+    focusedIcon: "event",
+    iconComponent: MaterialIcons,
+    headerShown: true,
   },
   {
     name: "MyPage",
@@ -44,9 +51,6 @@ export default tabConfig = [
     component: MyPageScreen,
     focusedIcon: "account",
     iconComponent: MaterialCommunityIcons,
+    headerShown: true,
   },
 ];
-
-tabConfig.map((routeConfig) => {
-  console.log(routeConfig);
-});
