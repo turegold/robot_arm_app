@@ -7,7 +7,7 @@ import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 
 import HomeScreen from "../screens/HomeScreen";
 import StampScreen from "../screens/StampScreen";
-import OrderStack from "../screens/OrderStack";
+import OrderStack from "../screens/Order/OrderStack";
 import EventScreen from "../screens/EventScreen";
 import MyPageScreen from "../screens/MyPageScreen";
 
