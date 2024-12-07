@@ -1,14 +1,4 @@
 import { React, useState } from "react";
-import {
-  View,
-  Text,
-  Image,
-  StyleSheet,
-  FlatList,
-  TouchableOpacity,
-  Button,
-  Pressable,
-} from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import drinks from "./drinks";
 import DrinkDetailScreen from "./DrinkDetailScreen";
