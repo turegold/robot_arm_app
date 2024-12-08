@@ -46,8 +46,18 @@ export default styles = StyleSheet.create({
 
   detailContainer: {
     flex: 1,
+
     alignItems: "center",
-    padding: 20,
+    padding: 20, //수정 할 수도
+  },
+  imageContainer: {
+    flex: 0.8,
+    width: "100%",
+    paddingHorizontal: 0, // 가로 패딩 제거
+
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "white",
   },
   detailImage: {
     width: 300,

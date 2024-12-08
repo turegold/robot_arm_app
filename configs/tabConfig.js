@@ -19,7 +19,7 @@ export default tabConfig = [
     component: HomeScreen,
     focusedIcon: "home",
     iconComponent: AntDesign,
-    headerShown: true,
+    headerShown: false,
   },
   {
     name: "Stamp",

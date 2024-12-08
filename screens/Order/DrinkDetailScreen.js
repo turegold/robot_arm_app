@@ -29,7 +29,10 @@ export default DrinkDetailScreen = ({ route }) => {
   };
   return (
     <View style={styles.detailContainer}>
-      <Image source={drink.img} style={styles.detailImage} />
+      <View style={styles.imageContainer}>
+        <Image source={drink.img} style={styles.detailImage} />
+      </View>
+
       <View style={styles.textContainer}>
         <View style={styles.bestBadge}>
           <Text style={styles.bestText}>BEST</Text>
