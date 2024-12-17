@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import drinks from "./drinks";
+
 import DrinkDetailScreen from "./DrinkDetailScreen";
 import DrinkListScreen from "./DrinkList";
 

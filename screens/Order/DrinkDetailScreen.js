@@ -13,7 +13,7 @@ export default DrinkDetailScreen = ({ route }) => {
     console.log(drink.name);
     try {
       // 서버로 POST 요청
-      const response = await axios.post(myLocation + "/api/text", {
+      const response = await axios.post(myLocation + "/api/orders", {
         drink: drink, // 서버로 보낼 데이터
       });
 

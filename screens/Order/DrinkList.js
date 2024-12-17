@@ -1,5 +1,7 @@
 import styles from "./OrderStyle";
 import { Text, Image, FlatList, TouchableOpacity } from "react-native";
+import drinks from "./drinks";
+
 // 음료 리스트 페이지
 export default DrinkListScreen = ({ navigation }) => {
   const renderItem = ({ item }) => (
